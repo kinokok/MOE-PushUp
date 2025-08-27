@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="370dp"
+    android:layout_height="wrap_content"
+    android:background="@color/dark_gray">
+
+    <!-- RepCount-->
+
+    <TextView
+        android:id="@+id/rep_text"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Reps Count"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/rep_in_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/ic_left_button"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/rep_edit_text"
+        app:layout_constraintRight_toLeftOf="@+id/rep_edit_text"
+        app:layout_constraintTop_toTopOf="@+id/rep_edit_text" />
+
+    <EditText
+        android:id="@+id/rep_edit_text"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/rounded_edittext"
+        android:backgroundTint="@color/white_gray"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:singleLine="true"
+        android:text="5"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rep_text" />
+
+    <ImageButton
+        android:id="@+id/rep_de_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/ic_right_button"
+        app:layout_constraintBottom_toBottomOf="@+id/rep_edit_text"
+        app:layout_constraintLeft_toRightOf="@+id/rep_edit_text"
+        app:layout_constraintTop_toTopOf="@+id/rep_edit_text" />
+
+
+    <!-- TimeCount-->
+
+    <TextView
+        android:id="@+id/time_text"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Time Count"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rep_edit_text"/>
+
+    <ImageButton
+        android:id="@+id/time_in_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/ic_left_button"
+        app:layout_constraintBottom_toBottomOf="@+id/time_edit_text"
+        app:layout_constraintRight_toLeftOf="@+id/time_edit_text"
+        app:layout_constraintTop_toTopOf="@+id/time_edit_text" />
+
+    <EditText
+        android:id="@+id/time_edit_text"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_edittext"
+        android:backgroundTint="@color/white_gray"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:singleLine="true"
+        android:text="180"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_text" />
+
+    <ImageButton
+        android:id="@+id/time_de_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/ic_right_button"
+        app:layout_constraintBottom_toBottomOf="@+id/time_edit_text"
+        app:layout_constraintLeft_toRightOf="@+id/time_edit_text"
+        app:layout_constraintTop_toTopOf="@+id/time_edit_text" />
+
+
+    <!-- ETC -->
+
+    <CheckBox
+        android:id="@+id/in_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        android:text="∞モード"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_edit_text" />
+
+
+    <TextView
+        android:id="@+id/in_detail_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:text="⇒時間、回数無制限！\n　限界を超えろ！"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/in_checkbox"
+        app:layout_constraintTop_toTopOf="@id/in_checkbox"
+        app:layout_constraintBottom_toBottomOf="@id/in_checkbox"/>
+
+    <ImageButton
+        android:id="@+id/positive_button"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ic_button_box_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/in_checkbox" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="OK"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/positive_button"
+        app:layout_constraintEnd_toEndOf="@id/positive_button"
+        app:layout_constraintStart_toStartOf="@id/positive_button"
+        app:layout_constraintTop_toTopOf="@id/positive_button" />
+
+
+    <ImageButton
+        android:id="@+id/closeButton"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:padding="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.684"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

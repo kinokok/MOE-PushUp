@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.memory.MemoryFragment">
+
+    <TextView
+        android:id="@+id/text_memory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:text="@string/title_memory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- 統計 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/weakLayout"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edittext"
+        android:backgroundTint="@color/dark_gray"
+        app:layout_constraintBottom_toTopOf="@+id/barChart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/weakLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="7日間"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/detail_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/transparent"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="⇒詳細"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Total -->
+        <TextView
+            android:id="@+id/tvTotalLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="合計"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toTopOf="@id/tvTotal"
+            app:layout_constraintEnd_toStartOf="@id/tvTotal" />
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="65dp"
+            android:text=" 回"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Row layout for Max, Min, and Average TextViews with dividers -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTotal"
+            app:layout_constraintVertical_bias="0.0">
+
+            <!-- Min -->
+            <TextView
+                android:id="@+id/tvMinLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+
+                android:text="最小"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@id/tvMin"
+                app:layout_constraintEnd_toStartOf="@id/tvMin" />
+
+            <TextView
+                android:id="@+id/tvMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                android:text=" 回"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <!-- Vertical separator line -->
+            <View
+                android:layout_width="2dp"
+                android:layout_height="35dp"
+                android:background="#CC1E1E1E" />
+
+            <!-- Avg -->
+            <TextView
+                android:id="@+id/tvAvgLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="平均"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@id/tvAvg"
+                app:layout_constraintEnd_toStartOf="@id/tvAvg" />
+
+            <TextView
+                android:id="@+id/tvAvg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                android:text=" 回"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <!-- Vertical separator line -->
+            <View
+                android:layout_width="2dp"
+                android:layout_height="35dp"
+                android:background="#CC1E1E1E" />
+
+            <!-- Max -->
+            <TextView
+                android:id="@+id/tvMaxLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="最大"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@id/tvMax"
+                app:layout_constraintEnd_toStartOf="@id/tvMax" />
+
+            <TextView
+                android:id="@+id/tvMax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                android:text=" 回"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 今日 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dateLayout"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_edittext"
+        android:backgroundTint="@color/dark_gray"
+        app:layout_constraintBottom_toTopOf="@id/weakLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <TextView
+            android:id="@+id/dateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="過去3日間の記録"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toTopOf="@id/todayLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/todayLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="今日"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@id/yesterdayLabel"
+            app:layout_constraintEnd_toEndOf="@+id/dateLabel"
+            app:layout_constraintStart_toStartOf="@+id/dateLabel" />
+
+        <TextView
+            android:id="@+id/today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="10dp"
+            android:text=" 回"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/todayLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/todayLabel"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/yesterdayLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="昨日"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@id/beforeYesterdayLabel"
+            app:layout_constraintEnd_toEndOf="@id/todayLabel"
+            app:layout_constraintStart_toStartOf="@id/todayLabel" />
+
+        <TextView
+            android:id="@+id/yesterday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="10dp"
+            android:text=" 回"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/yesterdayLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/yesterdayLabel"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/beforeYesterdayLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="一昨日"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/yesterdayLabel"
+            app:layout_constraintStart_toStartOf="@id/yesterdayLabel" />
+
+        <TextView
+            android:id="@+id/beforeYesterday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="10dp"
+            android:text=" 回"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/beforeYesterdayLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/beforeYesterdayLabel"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- 棒グラフ -->
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="370dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

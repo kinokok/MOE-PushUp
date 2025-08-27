@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
+    tools:context=".ui.option.OptionFragment">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <TextView
+        android:id="@+id/text_option"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:text="@string/title_option"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!-- 名前オプション -->
+<LinearLayout
+    android:layout_width="370dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/rounded_edittext"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:backgroundTint="@color/dark_gray">
+
+    <TextView
+        android:id="@+id/name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:text="名前"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_gravity="center_vertical" />
+
+    <EditText
+        android:id="@+id/name_text"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_edittext"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:inputType="text|textNoSuggestions"
+        android:maxLength="10"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
+
+</LinearLayout>
+
+
+
+    <!-- 目標オプション -->
+<LinearLayout
+    android:layout_width="370dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/rounded_edittext"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:backgroundTint="@color/dark_gray">
+
+    <TextView
+        android:id="@+id/objective_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="目標　"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_gravity="center_vertical" />
+
+    <ImageButton
+        android:id="@+id/ob_in_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/ic_left_button"
+        android:layout_gravity="center_vertical" />
+
+    <EditText
+        android:id="@+id/objective_text"
+        android:layout_width="80dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_edittext"
+        android:backgroundTint="@color/white_gray"
+        android:inputType="numberDecimal"
+        android:text="10"
+        android:singleLine="true"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:imeOptions="actionDone" />
+
+    <ImageButton
+        android:id="@+id/ob_de_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/ic_right_button"
+        android:layout_gravity="center_vertical" />
+</LinearLayout>
+
+    <!-- センサオプション -->
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_edittext"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:backgroundTint="@color/dark_gray">
+
+        <TextView
+            android:id="@+id/sensor_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="センサー"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <SeekBar
+            android:id="@+id/sensor_seekbar"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="15dp"
+            android:max="2"
+            android:progressTint="@color/blue"
+            android:thumbTint="@color/white"
+            android:minHeight="24dp"
+            android:thumb="@drawable/custom_thumb" />
+
+
+
+        <TextView
+            android:id="@+id/sensor_label_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="OFF"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+
+</LinearLayout>
+    </ScrollView>

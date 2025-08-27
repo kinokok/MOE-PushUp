@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@drawable/rounded_edittext"
+    android:backgroundTint="@color/dark_gray"
+    android:layout_marginBottom="2dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/achievement_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Achievement Name"
+            android:textSize="20sp"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/achievement_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Achievement Detail"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray" />
+    </LinearLayout>
+
+    <!-- OKの場合、ic_goodを表示するImageView -->
+    <ImageView
+        android:id="@+id/achievement_status_icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_good"
+        android:visibility="gone"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp" />
+
+    <!-- NGの場合、mostReps/conditionを表示するTextView -->
+    <TextView
+        android:id="@+id/achievement_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/red"
+        android:visibility="gone"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp" />
+
+
+</RelativeLayout>

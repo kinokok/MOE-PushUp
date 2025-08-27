@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/wall_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 文字 -->
+    <ImageView
+        android:id="@+id/dokiImage"
+        android:layout_width="50dp"
+        android:layout_height="111dp"
+        android:src="@drawable/ic_doki"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ImageView
+        android:id="@+id/dokiImage2"
+        android:layout_width="50dp"
+        android:layout_height="111dp"
+        android:src="@drawable/ic_doki2"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/dokiImage3"
+        android:layout_width="50dp"
+        android:layout_height="111dp"
+        android:src="@drawable/ic_doki"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ImageView
+        android:id="@+id/dokiImage4"
+        android:layout_width="50dp"
+        android:layout_height="111dp"
+        android:src="@drawable/ic_doki2"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/kyunImage"
+        android:layout_width="50dp"
+        android:layout_height="111dp"
+        android:src="@drawable/ic_kyun"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/flameImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pic_flame"
+        android:visibility="invisible"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/dark_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/start_button"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/ic_right_button"
+        android:text="@string/Start_Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/timer_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/time_count_text"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tap_count_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="260dp"
+        android:text="@string/tap_count_text"
+        android:textColor="@color/white"
+        android:textSize="80sp"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!-- 共通 -->
+    <TextView
+        android:id="@+id/double_tap_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="264dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/double_tap_text"
+        android:visibility="gone"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <RelativeLayout
+        android:id="@+id/text_window"
+        android:layout_width="match_parent"
+        android:layout_height="171dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/ic_text_window"
+        android:padding="16dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="16dp"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:id="@+id/text_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
