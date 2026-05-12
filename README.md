@@ -2,7 +2,7 @@
 Android application that makes push-ups fun. 
 
 
-![Uploading Videotogif (1).gif…]()
+![result](https://github.com/kinokok/MOE-PushUp/blob/main/moe.gif)
 
 
 
